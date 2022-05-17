@@ -14,7 +14,7 @@ database:
 	docker-compose run laminas composer create-test-db
 
 test:
-	docker-compose exec laminas composer test
+	docker-compose run laminas composer test
 
 bash-server:
 	docker-compose exec -e COMPOSER_MEMORY_LIMIT=-1 server bash
