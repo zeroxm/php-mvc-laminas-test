@@ -7,8 +7,8 @@ LABEL maintainer="getlaminas.org" \
     org.label-schema.vcs-url="https://github.com/laminas/laminas-mvc-skeleton"
 
 ## Update package information
-RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql \
-    postgresql-client
+RUN apt-get update && apt-get install -y libpq-dev postgresql-client \ 
+    && docker-php-ext-install pdo pdo_pgsql
 
 ## Configure Apache
 RUN a2enmod rewrite \

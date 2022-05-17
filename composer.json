@@ -58,7 +58,7 @@
         "development-enable": "Enable development mode.",
         "development-status": "Detail whether or not the application is in development mode.",
         "serve": "Start the built-in PHP web server and serve the application.",
-        "test": "Run unit tests."
+        "test": "./vendor/bin/phpunit"
     },
     "config": {
         "allow-plugins": {
