@@ -26,7 +26,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "ApplicationTest\\": "module/Application/test/",
+            "AlbumTest\\": "module/Album/test/"
         }
     },
     "scripts": {
@@ -34,8 +35,8 @@
         "cs-fix": "vendor/bin/phpcbf",
         "create-test-db": [
             "createdb -h postgres -p 5432 -U postgres php-mvc",
-            "psql -h postgres -U postgres -p 5432 -f db/postgres/create-tables.sql",
-            "psql -h postgres -U postgres -p 5432 -f db/postgres/insert-in-tables.sql"
+            "psql -h postgres -d php-mvc -U postgres -p 5432 -f db/postgres/create-tables.sql",
+            "psql -h postgres -d php-mvc -U postgres -p 5432 -f db/postgres/insert-in-tables.sql"
         ],
         "development-disable": "laminas-development-mode disable",
         "development-enable": "laminas-development-mode enable",
@@ -64,5 +65,10 @@
             "laminas/laminas-component-installer": true,
             "laminas/laminas-skeleton-installer": true
         }
+    },
+    "require-dev": {
+        "laminas/laminas-test": "^4.0",
+        "phpunit/phpunit": "^9.5",
+        "phpspec/prophecy-phpunit": "^2.0"
     }
 }
