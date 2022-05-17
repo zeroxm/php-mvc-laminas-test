@@ -32,6 +32,8 @@ RUN apt-get install --yes libicu-dev \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl
 
+RUN composer install --prefer-dist
+
 ###
 ## Optional PHP extensions 
 ###
