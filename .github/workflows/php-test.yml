@@ -1,0 +1,25 @@
+name: PHP Unit Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build using make
+      run: make build
+      
+    - name: Start using make
+      run: make start
+      
+    - name: Create Database
+      run: make database
+      
+    - name: Test
+      run: make test
