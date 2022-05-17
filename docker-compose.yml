@@ -1,0 +1,20 @@
+
+version: "2"
+
+services:
+  laminas:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ""
+      POSTGRES_HOST_AUTH_METHOD: trust
+      TZ: "America/Sao_Paulo"
+      PGTZ: "America/Sao_Paulo"
+    tmpfs:
+      - /var/lib/postgresql/data
+
